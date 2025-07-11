@@ -43,3 +43,31 @@ The CSV file saved from the oscilloscope contains raw waveform data captured dur
 - Time resolution depends on the horizontal scale and memory depth set during capture.
 - Voltage values reflect single-ended measurement between RS-485 A+ and ground.
 
+## Signal Analysis Procedure Summary (Differential Method CH1 − CH2)
+
+- The signal was measured using **Channel 1 and Channel 2** of the oscilloscope in differential mode.
+
+### Connection Setup:
+- **CH1 probe tip** connected to **RS-485 A+ (Data +)**.
+- **CH2 probe tip** connected to **RS-485 B− (Data −)**.
+- **Both probe grounds** connected to **RS-485 GND**.
+
+### Oscilloscope Settings:
+- **Math Function:** CH1 − CH2 enabled to display the true RS-485 differential signal.
+- **Horizontal scale (Time/Div):** 2000 µs (2 ms/div).
+- **Vertical scale (Volts/Div):** 2 V (adjust according to signal amplitude).
+
+### Trigger Configuration:
+- **Type:** Edge.
+- **Slope:** Rising.
+- **Trigger Source:** CH1 (or Math, depending on oscilloscope model).
+- **Trigger level:** Adjusted slightly above 0 V to detect valid differential signal transitions.
+- **Mode:** Single (to capture one complete communication event).
+
+### Purpose of Configuration:
+- Capturing the **first rising edge** of the differential signal, which marks the start of the Modbus master’s request.
+- This setup allows clear observation of both the **Modbus master request** followed by the **slave response** with proper differential signal behavior.
+
+### Result:
+- The oscilloscope successfully displayed the Modbus RTU master request followed by the slave response using the differential signal (CH1 − CH2), making it possible to visually analyze the communication sequence and signal timing while reducing common-mode noise.
+
