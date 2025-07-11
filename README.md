@@ -71,3 +71,31 @@ The CSV file saved from the oscilloscope contains raw waveform data captured dur
 ### Result:
 - The oscilloscope successfully displayed the Modbus RTU master request followed by the slave response using the differential signal (CH1 − CH2), making it possible to visually analyze the communication sequence and signal timing while reducing common-mode noise.
 ![Oscilloscope RS-485](./SDS00002.png)
+
+## CSV File Description (CH1, CH2, and Differential Signal)
+
+The CSV file saved from the oscilloscope contains raw waveform data captured during a Modbus RTU communication event using **Channel 1**, **Channel 2**, and the **Math (CH1 − CH2)** function for differential analysis.
+
+### CSV Structure:
+- **First column:** Time values in seconds
+- **Second column:** Voltage values from **Channel 1 (RS-485 A+)**.
+- **Third column:** Voltage values from **Channel 2 (RS-485 B−)**.
+- **Fourth column:** Time values in seconds
+- **Fifth column:** Calculated voltage values from **Math CH1 − CH2 (differential signal)**.
+
+### What the Data Represents:
+- **Channel 1 (CH1):** Measures the voltage level on RS-485 A+ relative to ground.
+- **Channel 2 (CH2):** Measures the voltage level on RS-485 B− relative to ground.
+- **Math CH1 − CH2:** Shows the true differential voltage used in RS-485 Modbus RTU communication.
+
+### How to Use the Data:
+- By graphing the **differential column (Math CH1 − CH2)**, you can clearly observe:
+  - The Modbus master request.
+  - The Modbus slave response.
+  - Voltage levels and timing between both events.
+- Comparing **CH1** and **CH2** columns helps verify signal symmetry and detect possible line issues (such as reflections or asymmetry).
+
+### Notes:
+- Time resolution and voltage precision depend on oscilloscope settings used during capture.
+- Differential measurement helps reduce common-mode noise effects and gives a clearer view of RS-485 communication behavior.
+
