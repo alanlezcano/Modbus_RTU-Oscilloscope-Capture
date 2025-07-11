@@ -1,36 +1,26 @@
-# Modbus_RTU-Oscilloscope-Capture
-Signal Analysis Procedure Summary – Modbus RTU Using SIGLENT SDS1000X-E
+# Modbus RTU Signal Analysis Using SIGLENT SDS1000X-E
 
-The signal was measured using Channel 1 of the oscilloscope.
+## Signal Analysis Procedure Summary
 
-Connection setup:
+- The signal was measured using **Channel 1** of the oscilloscope.
 
-Probe tip (CH1) connected to RS-485 A+ (Data +).
+### Connection Setup:
+- **Probe tip (CH1)** connected to **RS-485 A+ (Data +)**.
+- **Probe ground** connected to **RS-485 GND**.
 
-Probe ground connected to RS-485 GND.
+### Oscilloscope Settings:
+- **Horizontal scale (Time/Div):** 2000 µs (2 ms/div)
+- **Vertical scale (Volts/Div):** 2 V
 
-Oscilloscope settings:
+### Trigger Configuration:
+- **Type:** Edge
+- **Slope:** Rising
+- **Trigger level:** Adjusted slightly above 0 V to detect valid signal transitions.
+- **Mode:** Single (to capture one complete communication event)
 
-Horizontal scale (Time/Div): 2000 µs (2 ms/div)
+### Purpose of Configuration:
+- Capturing the **first rising edge** of the signal, which marks the start of the master’s request.
+- This setup allows clear observation of both the **Modbus master request** followed by the **slave response** in the same waveform capture.
 
-Vertical scale (Volts/Div): 2 V
-
-Trigger configuration:
-
-Type: Edge
-
-Slope: Rising
-
-Trigger level: Adjusted slightly above 0 V to detect valid signal transitions.
-
-Mode: Single (to capture one complete communication event)
-
-Purpose of configuration:
-
-Capturing the first rising edge of the signal, which marks the start of the master’s request.
-
-This setup allows clear observation of both the Modbus master request followed by the slave response in the same waveform capture.
-
-Result:
-
-The oscilloscope successfully displayed the Modbus RTU master request followed by the slave response, making it possible to visually analyze the communication sequence and signal timing.
+### Result:
+- The oscilloscope successfully displayed the Modbus RTU master request followed by the slave response, making it possible to visually analyze the communication sequence and signal timing.
