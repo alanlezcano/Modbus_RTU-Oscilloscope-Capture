@@ -25,3 +25,20 @@
 ### Result:
 - The oscilloscope successfully displayed the Modbus RTU master request followed by the slave response, making it possible to visually analyze the communication sequence and signal timing.
 ![Osciloscopio RS-485](./IMG_1009.jpg)
+## CSV File Description
+
+The CSV file saved from the oscilloscope contains raw waveform data captured during a Modbus RTU communication event. Specifically, it records both the **master request** and the **slave response** signals measured on the RS-485 A+ line.
+
+### CSV Structure:
+- **First column:** Time values in seconds or microseconds (depending on oscilloscope settings).
+- **Second column:** Voltage values in volts, corresponding to the signal level at each time point.
+
+### What the Data Represents:
+- The initial portion of the data corresponds to the **Modbus master request frame**.
+- Following a brief idle period, the second portion corresponds to the **Modbus slave response frame**.
+- By graphing this data in software like Excel, LibreOffice Calc, or MATLAB, you can visualize the exact timing, pulse width, and signal integrity of both communication frames.
+
+### Notes:
+- Time resolution depends on the horizontal scale and memory depth set during capture.
+- Voltage values reflect single-ended measurement between RS-485 A+ and ground.
+
