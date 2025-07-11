@@ -1,6 +1,6 @@
 # Modbus RTU Signal Analysis Using SIGLENT SDS1000X-E
 
-## Signal Analysis Procedure Summary
+## Signal Analysis Procedure Summary (Channel 1)
 
 - The signal was measured using **Channel 1** of the oscilloscope.
 
