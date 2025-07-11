@@ -24,3 +24,4 @@
 
 ### Result:
 - The oscilloscope successfully displayed the Modbus RTU master request followed by the slave response, making it possible to visually analyze the communication sequence and signal timing.
+![Osciloscopio RS-485](./IMG_1009.jpg)
